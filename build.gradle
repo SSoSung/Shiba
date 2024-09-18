@@ -35,8 +35,6 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     implementation group: 'com.github.gavlyukovskiy', name: 'p6spy-spring-boot-starter', version: '1.8.1'
     implementation group: 'com.auth0', name: 'java-jwt', version: '3.19.2'
-    implementation group: 'com.querydsl', name: 'querydsl-jpa', version: '5.0.0'
-    implementation group: 'com.querydsl', name: 'querydsl-apt', version: '5.0.0'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4'
 

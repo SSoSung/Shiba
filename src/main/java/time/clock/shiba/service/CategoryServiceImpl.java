@@ -65,7 +65,7 @@ public class CategoryServiceImpl implements CategoryService {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String userId = user.getUserId();
 
-        List<Category> categoryList = categoryRepo.findByUserId(userId);
+        List<Category> categoryList = categoryRepo.findByUserIdAndUseYn(userId, "N");
 
         List<ReadCategoryResp> response = new ArrayList<>();
         if(!categoryList.isEmpty()){

@@ -15,6 +15,6 @@ public interface CategoryRepo extends JpaRepository<Category, CategoryId> {
             "where category.userId = :userId " )
     Integer findByMaxCategoryId(@Param("userId") String userId);
 
-    List<Category> findByUserId(String userId);
+    List<Category> findByUserIdAndUseYn(String userId, String useYn);
 
 }

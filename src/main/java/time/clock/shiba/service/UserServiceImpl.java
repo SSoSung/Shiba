@@ -28,6 +28,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
+    public User getUser(String userId) {
+        return userRepo.findByUserId(userId);
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
         User user = userRepo.findByUserId(userId);
         if(user == null) {
@@ -39,11 +44,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("임시"));
         return new org.springframework.security.core.userdetails.User(user.getUserId(), user.getUserPw(), authorities);
-    }
-
-    @Override
-    public User getUser(String userId) {
-        return userRepo.findByUserId(userId);
     }
 
     @Override
