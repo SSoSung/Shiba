@@ -10,4 +10,9 @@ public class ViewController {
     public String index(){
         return "test";
     }
+
+    @GetMapping("/testindex")
+    public String testIndex(){
+        return "test";
+    }
 }
